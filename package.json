@@ -3,6 +3,8 @@
   "description": "simple json to csv tool",
   "version": "0.0.2",
   "author": "Matteo Figus <matteofigus@gmail.com>",
+  "repository": "https://github.com/matteofigus/nice-json2csv.git",
+  "main":"index",
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
@@ -12,7 +14,6 @@
     "express": ""
   },
   "devDependencies": {
-    "underscore": "",
     "should": "1.0.0"
   }
 }
