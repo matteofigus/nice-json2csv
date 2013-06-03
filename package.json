@@ -1,0 +1,18 @@
+{
+  "name": "nice-json2csv",
+  "description": "simple json to csv tool",
+  "version": "0.0.1",
+  "author": "Matteo Figus <matteofigus@gmail.com>",
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "dependencies": {
+    "underscore": "",
+    "express": ""
+  },
+  "devDependencies": {
+    "underscore": "",
+    "should": "1.0.0"
+  }
+}

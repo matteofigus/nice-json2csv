@@ -12,3 +12,15 @@ logs
 results
 
 npm-debug.log
+
+node_modules
+.idea
+*.swp
+*.swo
+*.swn
+*.swm
+*.orig
+*.local
+build/
+
+.DS_Store
