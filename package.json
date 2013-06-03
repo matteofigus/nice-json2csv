@@ -1,7 +1,7 @@
 {
   "name": "nice-json2csv",
   "description": "simple json to csv tool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Matteo Figus <matteofigus@gmail.com>",
   "engines": {
     "node": "0.8.x",
