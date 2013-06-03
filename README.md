@@ -1,7 +1,8 @@
 nice-json2csv
 =============
 
-A simple tool for converting json to csv - it doesn't require headers
+A simple tool for converting a Json object to CSV without requiring headers.
+It also extends res on Express.js to easily produce csv files available to be downloaded.
 
 # Installation
 
@@ -9,6 +10,13 @@ A simple tool for converting json to csv - it doesn't require headers
 
 # Usage
 
+	var json2csv = require('nice-json2csv');
+	var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
+
+	var csvContent = json2csv.convert(myData);
+
+# Usage with Express.js
+	
 	var express = require('express');
 	var json2csv = require('nice-json2csv');
 
