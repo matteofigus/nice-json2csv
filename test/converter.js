@@ -28,4 +28,9 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return two rows if the parameter is not an array', function(done){
+    json2csv.convert({ "a": "b", "c": "d"}).should.be.eql("\"a\",\"c\"\n\"b\",\"d\"");
+    done();
+  });
+
 });
