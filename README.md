@@ -1,5 +1,6 @@
 nice-json2csv
 =============
+[![Build Status](https://secure.travis-ci.org/matteofigus/nice-json2csv.png?branch=master)](http://travis-ci.org/matteofigus/nice-json2csv)
 
 A simple tool for converting a Json object to CSV without requiring headers.
 It also extends res on Express.js to easily produce csv files available to be downloaded.

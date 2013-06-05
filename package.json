@@ -1,6 +1,6 @@
 {
   "name": "nice-json2csv",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple json2csv converter + Express csv utility",
   "author": "Matteo Figus <matteofigus@gmail.com>",
   "repository": {
@@ -19,6 +19,10 @@
   },
   "devDependencies": {
     "should": "1.0.0",
-    "superagent": ""
+    "superagent": "",
+    "mocha": ""
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
