@@ -16,6 +16,8 @@ It also extends res on Express.js to easily produce csv files available to be do
 
 	var csvContent = json2csv.convert(myData);
 
+	var justFirstNames = json2csv.convert(myData, ["first_name"]);
+
 # Usage with Express.js
 	
 	var express = require('express');
@@ -23,10 +25,14 @@ It also extends res on Express.js to easily produce csv files available to be do
 
 	var app = express();
 
-	app.get('/', function(req, res){
-		var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
-		
-		res.csv(myData, "filename.csv");
+	var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
+
+	app.get('/getPeople', function(req, res){
+		res.csv(myData, "people.csv");
+	});
+
+	app.get('/getNames', function(req, res){
+		res.csv(myData, "names.csv", ["first_name"]);
 	});
 
 	app.listen(3000);

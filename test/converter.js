@@ -33,4 +33,19 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return the selected columns if the headers parameter is specified', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], ["a"]).should.be.eql("\"a\"\n\"b\"\n\"b\"");
+    done();
+  });
+
+  it('should return the selected column if the headers parameter is a string', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], "a").should.be.eql("\"a\"\n\"b\"\n\"b\"");
+    done();
+  });
+
+  it('should work if the headers parameter includes not valid columns', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], ["a", "y"]).should.be.eql("\"a\",\"y\"\n\"b\",\"\"\n\"b\",\"\"");
+    done();
+  });
+
 });
