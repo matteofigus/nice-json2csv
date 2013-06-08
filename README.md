@@ -36,3 +36,7 @@ It also extends res on Express.js to easily produce csv files available to be do
 	});
 
 	app.listen(3000);
+
+# License
+
+MIT
