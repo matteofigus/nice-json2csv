@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/matteofigus/nice-json2csv.git"
   },
+  "issues": "https://github.com/matteofigus/nice-json2csv/issues",
   "keywords": ["csv", "json", "json2csv", "express"],
   "main":"index",
   "engines": {
