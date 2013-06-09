@@ -48,4 +48,16 @@ describe('The converter', function(){
     done();
   });
 
+  it('should correctly work with hierarchy > 1', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": { "e": "f", "g": "h"}}]).should.be.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"[Object]\",\"\"");
+    done();
+  });
+
+  it('should correctly handle circular references', function(done){
+    var obj = [{ "a": "b", "c": "d"},{ "a": null}];
+    obj[1].a = obj[1];
+    json2csv.convert(obj).should.be.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"[Object]\",\"\"");
+    done();
+  });
+
 });
