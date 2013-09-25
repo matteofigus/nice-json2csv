@@ -40,3 +40,6 @@ It also extends res on Express.js to easily produce csv files available to be do
 # License
 
 MIT
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/matteofigus/nice-json2csv/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
