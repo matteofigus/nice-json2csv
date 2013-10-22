@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/matteofigus/nice-json2csv/issues"
   },
-  "keywords": ["csv", "json", "json2csv", "express"],
+  "keywords": ["csv", "json", "json2csv", "excel", "res.csv", "express"],
   "main":"index",
   "engines": {
     "node": "0.8.x",
