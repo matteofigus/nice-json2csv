@@ -2,8 +2,8 @@ nice-json2csv
 =============
 [![Build Status](https://secure.travis-ci.org/matteofigus/nice-json2csv.png?branch=master)](http://travis-ci.org/matteofigus/nice-json2csv)
 
-A simple tool for converting a Json object to CSV without requiring headers.
-It also extends res on Express.js to easily produce csv files available to be downloaded.
+A simple node.js tool that converts a Json object to a CSV output without requiring headers.
+It can extend the Response object on Express.js to easily produce csv files available to be downloaded.
 
 # Installation
 
@@ -11,31 +11,45 @@ It also extends res on Express.js to easily produce csv files available to be do
 
 # Usage
 
-	var json2csv = require('nice-json2csv');
-	var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
+### convert(jsonObject [, columns])
 
-	var csvContent = json2csv.convert(myData);
+Include the library and use the convert function to get a csv string from your json object
 
-	var justFirstNames = json2csv.convert(myData, ["first_name"]);
+```js
+var json2csv = require('nice-json2csv');
+var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
+
+// all the json object
+var csvContent = json2csv.convert(myData);
+
+// just the 'first_name' column
+var justFirstNames = json2csv.convert(myData, ["first_name"]);
+```
 
 # Usage with Express.js
-	
-	var express = require('express');
-	var json2csv = require('nice-json2csv');
 
-	var app = express();
+### res.csv(jsonObject, fileName [, columns])
 
-	var myData = [{ "first_name": "John", "last_name": "Doe"}, { "first_name": "Jane", "last_name": "Doe"}, { "first_name": "Mick"}];
+Include the library and decorate the Express object with app.use() as shown in the example after the express() initialisation. After that, res.csv() will be available.
 
-	app.get('/getPeople', function(req, res){
-		res.csv(myData, "people.csv");
-	});
+### res.csv(jsonObject, fileName [, columns])
 
-	app.get('/getNames', function(req, res){
-		res.csv(myData, "names.csv", ["first_name"]);
-	});
+Somewhere in your app.js, your middleware, or wherever you instantiate express.js
 
-	app.listen(3000);
+```js
+var express = require('express');
+var json2csv = require('nice-json2csv');
+
+var app = express();
+
+app.use(json2csv.expressDecorator);  
+
+app.get('/getCsv', function(req, res){
+	res.csv([{ "hello": "world" }], "myFile.csv");
+});
+
+app.listen(3000);
+```
 
 # License
 

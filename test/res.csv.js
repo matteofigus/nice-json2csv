@@ -1,10 +1,8 @@
-var express = require('express');
-var http = require('http');
 var superagent = require('superagent');
 var should = require('should');
-var _ = require('underscore');
 
 var json2csv = require('./../index');
+var express = require('express');
 
 describe('res.csv()', function(){
 
@@ -12,18 +10,15 @@ describe('res.csv()', function(){
     var app = express();
     var myData = [{ "a": "b", "c": "d"}, { "a": "e", "c": "f"}];
       
+    app.use(json2csv.expressDecorator);   
+
     app.get('/test', function(req, res){
       res.csv(myData, "filename.csv");
     });
 
     app.get('/external-route', require('./fixtures/route').downloadCSV);
-    app.listen(3009, done);
-  });
 
-  it('should correctly extend res', function(done) {
-    var resExpressHttp = express.response || http.ServerResponse.prototype;
-    resExpressHttp.csv.should.be.a('function');
-    done();
+    app.listen(3009, done);
   });
 
   it('should correctly return my csv when invoked through express', function(done) {
@@ -43,6 +38,5 @@ describe('res.csv()', function(){
     });
 
   });
-
 
 });
