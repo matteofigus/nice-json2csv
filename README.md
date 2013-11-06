@@ -28,8 +28,6 @@ var justFirstNames = json2csv.convert(myData, ["first_name"]);
 
 # Usage with Express.js
 
-### res.csv(jsonObject, fileName [, columns])
-
 Include the library and decorate the Express object with app.use() as shown in the example after the express() initialisation. After that, res.csv() will be available.
 
 ### res.csv(jsonObject, fileName [, columns])
