@@ -1,13 +1,16 @@
-nice-json2csv
+nice-json2csv [![Build Status](https://secure.travis-ci.org/matteofigus/nice-json2csv.png?branch=master)](http://travis-ci.org/matteofigus/nice-json2csv)
 =============
-[![Build Status](https://secure.travis-ci.org/matteofigus/nice-json2csv.png?branch=master)](http://travis-ci.org/matteofigus/nice-json2csv)
+
+[![NPM](https://nodei.co/npm/nice-json2csv.png?downloads=true)](https://npmjs.org/package/nice-json2csv)
 
 A simple node.js tool that converts a Json object to a CSV output without requiring headers.
 It can extend the Response object on Express.js to easily produce csv files available to be downloaded.
 
 # Installation
 
-	npm install nice-json2csv
+```shell
+npm install nice-json2csv
+```
 
 # Usage
 
