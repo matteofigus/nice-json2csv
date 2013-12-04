@@ -11,9 +11,9 @@ It can extend the Response object on Express.js to easily produce csv files avai
 
 # Usage
 
-### convert(jsonObject [, columns])
+### convert(jsonObject [, columns] [, suppressHeader])
 
-Include the library and use the convert function to get a csv string from your json object
+Include the library and use the convert function to get a csv string from your json object.
 
 ```js
 var json2csv = require('nice-json2csv');
@@ -33,7 +33,7 @@ var noHeader = json2csv.convert(myData, ["first_name"], true);
 
 Include the library and decorate the Express object with app.use() as shown in the example after the express() initialisation. After that, res.csv() will be available.
 
-### res.csv(jsonObject, fileName [, columns])
+### res.csv(jsonObject, fileName [, columns] [, suppressHeader])
 
 Somewhere in your app.js, your middleware, or wherever you instantiate express.js
 

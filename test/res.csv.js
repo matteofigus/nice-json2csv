@@ -16,6 +16,10 @@ describe('res.csv()', function(){
       res.csv(myData, "filename.csv");
     });
 
+    app.get('/test2', function(req, res){
+      res.csv(myData, "filename.csv", null, true);
+    });
+
     app.get('/external-route', require('./fixtures/route').downloadCSV);
 
     app.listen(3009, done);
@@ -25,6 +29,13 @@ describe('res.csv()', function(){
     superagent.get("http://127.0.0.1:3009/test").end(function(res){
       res.headers['content-disposition'].should.be.eql('attachment; filename=filename.csv');
       res.text.should.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"e\",\"f\"");
+      done();
+    });
+  });
+
+  it('should correctly return my csv when invoked through express and suppressHeader option', function(done) {
+    superagent.get("http://127.0.0.1:3009/test2").end(function(res){
+      res.text.should.eql("\"b\",\"d\"\n\"e\",\"f\"");
       done();
     });
   });

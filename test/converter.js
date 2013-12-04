@@ -38,8 +38,18 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return two rows if suppressHeaders is false', function(done){
+    json2csv.convert({ "a": "b", "c": "d"}, null, false).should.be.eql("\"a\",\"c\"\n\"b\",\"d\"");
+    done();
+  });
+
   it('should return the selected columns if the headers parameter is specified', function(done){
     json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], ["a"]).should.be.eql("\"a\"\n\"b\"\n\"b\"");
+    done();
+  });
+
+  it('should return the selected columns if the headers parameter is specified with the suppressHeader option', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], ["a"], true).should.be.eql("\"b\"\n\"b\"");
     done();
   });
 
