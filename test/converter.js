@@ -33,6 +33,11 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return one row if suppressHeaders is true', function(done){
+    json2csv.convert({ "a": "b", "c": "d"}, null, true).should.be.eql("\"b\",\"d\"");
+    done();
+  });
+
   it('should return the selected columns if the headers parameter is specified', function(done){
     json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b"}], ["a"]).should.be.eql("\"a\"\n\"b\"\n\"b\"");
     done();

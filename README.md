@@ -24,6 +24,9 @@ var csvContent = json2csv.convert(myData);
 
 // just the 'first_name' column
 var justFirstNames = json2csv.convert(myData, ["first_name"]);
+
+// without the header row
+var noHeader = json2csv.convert(myData, ["first_name"], true);
 ```
 
 # Usage with Express.js
