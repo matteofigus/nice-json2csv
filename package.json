@@ -1,6 +1,6 @@
 {
   "name": "nice-json2csv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple json2csv converter + Express csv utility",
   "author": "Matteo Figus <matteofigus@gmail.com>",
   "license": "MIT",
@@ -11,8 +11,15 @@
   "bugs": {
     "url": "https://github.com/matteofigus/nice-json2csv/issues"
   },
-  "keywords": ["csv", "json", "json2csv", "excel", "res.csv", "express"],
-  "main":"index",
+  "keywords": [
+    "csv",
+    "json",
+    "json2csv",
+    "excel",
+    "res.csv",
+    "express"
+  ],
+  "main": "index",
   "engines": {
     "node": ">=0.6.x",
     "npm": ">=1.1.x"
