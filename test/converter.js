@@ -18,6 +18,11 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return a blank value for explicit "null" value', function(done){
+    json2csv.convert([{ "a": "b", "c": "d"},{ "a": "b", "c": null}]).should.be.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"b\",\"\"");
+    done();
+  });
+
   it('should correctly extend headers', function(done){
     json2csv.convert([{ "a": "b"},{ "a": "b", "c": "d"}]).should.be.eql("\"a\",\"c\"\n\"b\",\"\"\n\"b\",\"d\"");
     done();
