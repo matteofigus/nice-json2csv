@@ -23,6 +23,11 @@ describe('The converter', function(){
     done();
   });
 
+  it('should return a correct value for numeric 0 values', function(done){
+    json2csv.convert([{ "a": 1, "c": 0},{ "a": "b", "c": 23}]).should.be.eql("\"a\",\"c\"\n\"1\",\"0\"\n\"b\",\"23\"");
+    done();
+  });
+
   it('should correctly extend headers', function(done){
     json2csv.convert([{ "a": "b"},{ "a": "b", "c": "d"}]).should.be.eql("\"a\",\"c\"\n\"b\",\"\"\n\"b\",\"d\"");
     done();
