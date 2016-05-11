@@ -26,7 +26,7 @@ describe('res.csv()', function(){
   });
 
   it('should correctly return my csv when invoked through express', function(done) {
-    superagent.get("http://127.0.0.1:3009/test").end(function(res){
+    superagent.get("http://127.0.0.1:3009/test").end(function(err, res){
       res.headers['content-disposition'].should.be.eql('attachment; filename=filename.csv');
       res.text.should.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"e\",\"f\"");
       done();
@@ -34,7 +34,7 @@ describe('res.csv()', function(){
   });
 
   it('should correctly return my csv when invoked through express and suppressHeader option', function(done) {
-    superagent.get("http://127.0.0.1:3009/test2").end(function(res){
+    superagent.get("http://127.0.0.1:3009/test2").end(function(err, res){
       res.text.should.eql("\"b\",\"d\"\n\"e\",\"f\"");
       done();
     });
@@ -42,7 +42,7 @@ describe('res.csv()', function(){
 
   it('should correctly return my csv when invoked through express with a route that is required from a different file', function(done) {
 
-    superagent.get("http://127.0.0.1:3009/external-route").end(function(res){
+    superagent.get("http://127.0.0.1:3009/external-route").end(function(err, res){
       res.headers['content-disposition'].should.be.eql('attachment; filename=results.csv');
       res.text.should.eql("\"a\",\"c\"\n\"b\",\"d\"\n\"e\",\"f\"");
       done();
