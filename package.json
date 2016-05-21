@@ -1,6 +1,6 @@
 {
   "name": "nice-json2csv",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple json2csv converter + Express csv utility",
   "author": "Matteo Figus <matteofigus@gmail.com>",
   "license": "MIT",
