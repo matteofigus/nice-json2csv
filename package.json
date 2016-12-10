@@ -28,7 +28,7 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
-    "should": "11.1.1",
+    "should": "11.1.2",
     "express": "4.14.0",
     "superagent": "",
     "mocha": ""
