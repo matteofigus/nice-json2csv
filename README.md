@@ -1,6 +1,8 @@
 nice-json2csv [![Build Status](https://secure.travis-ci.org/matteofigus/nice-json2csv.png?branch=master)](http://travis-ci.org/matteofigus/nice-json2csv)
 =============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/matteofigus/nice-json2csv.svg)](https://greenkeeper.io/)
+
 [![NPM](https://nodei.co/npm/nice-json2csv.png?downloads=true)](https://npmjs.org/package/nice-json2csv)
 
 A simple node.js tool that converts a Json object to a CSV output without requiring headers.
