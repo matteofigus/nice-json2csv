@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "should": "11.2.1",
-    "express": "4.15.2",
+    "express": "4.15.3",
     "superagent": "",
     "mocha": ""
   },
