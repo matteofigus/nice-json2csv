@@ -31,7 +31,7 @@
     "should": "13.1.0",
     "express": "5.0.0-alpha.6",
     "superagent": "",
-    "mocha": ""
+    "mocha": "3.4.0"
   },
   "scripts": {
     "test": "mocha"
